@@ -127,10 +127,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Arma.h" />
+    <ClInclude Include="Ballesta.h" />
+    <ClInclude Include="Caballero.h" />
+    <ClInclude Include="Cosa.h" />
+    <ClInclude Include="Daga.h" />
     <ClInclude Include="Elemento.h" />
+    <ClInclude Include="Espada.h" />
+    <ClInclude Include="ListaArmas.h" />
+    <ClInclude Include="NodoA.h" />
+    <ClInclude Include="Yesca.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Arma.cpp" />
+    <ClCompile Include="Ballesta.cpp" />
+    <ClCompile Include="Caballero.cpp" />
+    <ClCompile Include="Cosa.cpp" />
+    <ClCompile Include="Daga.cpp" />
+    <ClCompile Include="Espada.cpp" />
+    <ClCompile Include="ListaArmas.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NodoA.cpp" />
+    <ClCompile Include="Yesca.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
