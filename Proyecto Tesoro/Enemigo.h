@@ -16,7 +16,7 @@ public:
 
 	virtual string getElemento() ;
 	virtual int getDanio();
-	virtual void atacar(Cosa*, Enemigo*);
+	virtual void atacar(Cosa* caballero);
 
 
 

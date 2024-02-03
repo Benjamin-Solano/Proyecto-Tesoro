@@ -24,21 +24,82 @@ void ListaArmas::ingresarPrimero(Arma* arma) {
 }
 
 void ListaArmas::ingresarUltimo(Arma* arma) {
-	if (dynamic_cast<Ballesta*>(arma)) {
+	/*if (dynamic_cast<Ballesta*>(arma)) {
 		if (cantidadBallestas() > 2) {
 			return;
+		}
+		NodoA* pex = head;
+		NodoA* nuevo = nullptr;
+		if (!existe(arma)) {
+			if (pex == nullptr) {
+				ingresarPrimero((Ballesta*)arma);
+			}
+			else {
+				while (pex->getNext() != nullptr) {
+					pex = pex->getNext();
+				}
+				nuevo = new NodoA((Ballesta*)arma, nullptr);
+				pex->setNext(nuevo);
+			}
 		}
 	}
 	if (dynamic_cast<Espada*>(arma)) {
 		if (cantidadEspadas() > 2) {
 			return;
 		}
+		NodoA* pex = head;
+		NodoA* nuevo = nullptr;
+		if (!existe(arma)) {
+			if (pex == nullptr) {
+				ingresarPrimero((Espada*)arma);
+			}
+			else {
+				while (pex->getNext() != nullptr) {
+					pex = pex->getNext();
+				}
+				nuevo = new NodoA((Espada*)arma, nullptr);
+				pex->setNext(nuevo);
+			}
+		}
 	}
 	if (dynamic_cast<Yesca*>(arma)) {
 		if (cantidadYescas() > 2) {
 			return;
 		}
+		NodoA* pex = head;
+		NodoA* nuevo = nullptr;
+		if (!existe(arma)) {
+			if (pex == nullptr) {
+				ingresarPrimero((Yesca*)arma);
+			}
+			else {
+				while (pex->getNext() != nullptr) {
+					pex = pex->getNext();
+				}
+				nuevo = new NodoA((Yesca*)arma, nullptr);
+				pex->setNext(nuevo);
+			}
+		}
 	}
+	if (dynamic_cast<Daga*>(arma)) {
+		if (cantidadYescas() > 2) {
+			return;
+		}
+		NodoA* pex = head;
+		NodoA* nuevo = nullptr;
+		if (!existe(arma)) {
+			if (pex == nullptr) {
+				ingresarPrimero((Daga*)arma);
+			}
+			else {
+				while (pex->getNext() != nullptr) {
+					pex = pex->getNext();
+				}
+				nuevo = new NodoA((Daga*)arma, nullptr);
+				pex->setNext(nuevo);
+			}
+		}
+	}*/
 	NodoA* pex = head;
 	NodoA* nuevo = nullptr;
 	if (!existe(arma)) {

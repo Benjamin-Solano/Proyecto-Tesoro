@@ -25,5 +25,5 @@ string Arma::getElemento2()
 void Arma::setTipo(string tipo) { this->tipo = tipo; }
 
 string Arma::toString() {
-    return "aa";
+    return "aarmaTS";
 }

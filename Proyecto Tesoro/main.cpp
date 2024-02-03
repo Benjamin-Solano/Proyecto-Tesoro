@@ -2,17 +2,22 @@
 
 int main() {
 
-	/*Arma* a = new Ballesta(true, "ballesta");
-	Arma* a1 = new Ballesta(true, "ballesta");
-	Arma* b = new Espada(true, "espada");
-	Arma* c = new Yesca(true, "yesca");
-	Arma* d = new Daga(true, "daga");
+	/*Arma* a = new Ballesta();
+	Arma* a1 = new Ballesta();
+	Arma* b = new Espada();
+	Arma* c = new Yesca();
+	Arma* d = new Daga();
 
 	ListaArmas* lista = new ListaArmas();
 	lista->ingresarUltimo(a);
 	lista->ingresarUltimo(b);
 	lista->ingresarUltimo(c);
 	lista->ingresarUltimo(d);
+	lista->ingresarUltimo(a1);
+
+	lista->eliminar("ballesta");
+	lista->eliminar("ballesta");
+	cout << lista->toString() << endl;
 
 	Cosa* caba = new Caballero(lista, true);
 
@@ -47,12 +52,22 @@ int main() {
 	gargola->atacar(caba, gargola);
 	cout << "Vida del Caballero: " << caba->getHp() << endl;
 */
-
+	Arma* espada = new Espada();
+	ListaArmas* list = new ListaArmas();
+	list->ingresarUltimo(espada);
+	Caballero* cab = new Caballero(list, true);
 	Matriz* mat = new Matriz();
+	cout << mat->toString() << endl;
+	mat->verificar(1,1, cab);
+	mat->verificar(2,2, cab);
+	mat->verificar(3,3, cab);
+	mat->verificar(4,4, cab);
+	cout << mat->toString() << endl;
+	cout << cab->toString() << endl;
 
 	/*mat->ingresar7Espadas();
 	mat->ingresar6Ballestas();*/
-	cout << mat->toString() << endl;
+	//cout << mat->toString() << endl;
 
 	return 0;
 }

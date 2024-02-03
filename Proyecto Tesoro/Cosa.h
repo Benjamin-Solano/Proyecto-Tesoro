@@ -24,9 +24,14 @@ public:
 
     virtual int getHp();
     //virtual ListaArmas* getListaArmas() { return nullptr; }
-
+    
+    virtual string getTipo();
     virtual void eliminarArma(string tipo);
 
     virtual void curar(Cosa*);
+
+    virtual int getDanio();
+    virtual void atacar(Cosa* caballero);
+
 
 };

@@ -6,7 +6,7 @@ bool Cosa::getActivo() const { return activo; }
 void Cosa::setActivo(bool activo) { this->activo = activo; }
 
 string Cosa::toString() {
-    return "aa";
+    return "aatostring";
 }
 
 void Cosa::setHp(int hp) { }
@@ -15,6 +15,21 @@ void Cosa::setHp(int hp) { }
 int Cosa::getHp() { return 100; }
 //virtual ListaArmas* getListaArmas() { return nullptr; }
 
+string Cosa::getTipo()
+{
+    return "aatipo";
+}
+
 void Cosa::eliminarArma(string tipo) { }
 
 void Cosa::curar(Cosa*) { }
+
+int Cosa::getDanio()
+{
+    return 0;
+}
+
+void Cosa::atacar(Cosa* caballero)
+{
+}
+

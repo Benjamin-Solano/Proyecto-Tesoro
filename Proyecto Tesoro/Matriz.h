@@ -19,10 +19,13 @@ private:
 	int fil;
 	int col;
 	Cosa*** mat;
+	
 
 public:
 	Matriz();
 	~Matriz();
+
+	int x; int y; //lugar actual del caballero
 
 	// 9 x 9: 7 espadas, 6 ballestas, 10 yescas 5 dagas, 
 	// 14 tentáculos, 12 ogros, 10 gárgolas, 6 hierbas y el cofre
@@ -46,6 +49,10 @@ public:
 	void eliminar(int x, int y);
 
 	string toString();
+
+	void verificar(int x, int y, Caballero* caballero);
+
+	
 
 
 };

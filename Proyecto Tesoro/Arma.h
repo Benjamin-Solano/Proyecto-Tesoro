@@ -2,12 +2,17 @@
 #include "Cosa.h"
 class Arma : public Cosa {
 protected:
-    string tipo;//era por si no servia el dynamic cast pero lo dejo porque me da pereza quitarlo :p
+    string tipo;//para la lista. podria no usarse, pero ya que jaja
     string elemento;
     string elemento2;
 public:
     Arma();
     Arma(bool activo, string tipo, string elemento, string elemento2);
+    Arma(Arma* arma) {
+        tipo = arma->getTipo();
+        elemento = arma->getElemento();
+        elemento2 = arma->getElemento2();
+    }
     
     virtual ~Arma();
     string getTipo();

@@ -202,10 +202,26 @@ void Matriz::ingresarCofre()
 void Matriz::eliminar(Cosa* cosa)
 {
 
+	for (int i = 0; i < fil; i++) {
+		for (int j = 0; j < col; j++) {
+			if (mat[i][j] != nullptr) {
+				delete mat[i][j];
+				mat[i][j] = nullptr;
+			}
+				
+		}
+	}
 }
 
 void Matriz::eliminar(int x, int y)
 {
+	if (x > fil || x<0 || y>fil || x < y)
+		return;
+
+	if (mat[x][y] != nullptr) {
+		delete mat[x][y];
+		mat[x][y] = nullptr;
+	}
 }
 
 string Matriz::toString()
@@ -251,4 +267,88 @@ string Matriz::toString()
 
 
 	return s.str();
+}
+
+void Matriz::verificar(int x, int y, Caballero* caballero)
+{
+	if (mat[x][y] == nullptr) {
+		cout << "no hay nada!" << endl;
+		return;
+	}
+
+	if (dynamic_cast<Arma*>(mat[x][y])) {
+		if (mat[x][y]->getTipo() == "ballesta") {
+			caballero->getListaArmas()->ingresarUltimo((Ballesta*)mat[x][y]);
+		}
+		if (mat[x][y]->getTipo() == "espada") {
+			caballero->getListaArmas()->ingresarUltimo((Espada*)mat[x][y]);
+		}
+		if (mat[x][y]->getTipo() == "yesca") {
+			caballero->getListaArmas()->ingresarUltimo((Yesca*)mat[x][y]);
+		}
+		if (mat[x][y]->getTipo() == "daga") {
+			caballero->getListaArmas()->ingresarUltimo((Daga*)mat[x][y]);
+		}
+		//caballero->getListaArmas()->ingresarUltimo((Arma*)mat[x][y]);
+		cout << "recibio un arma: " <<mat[x][y]->getTipo() <<endl;
+		delete mat[x][y]; mat[x][y] = nullptr;
+		return;
+	}
+
+	if (dynamic_cast<Gargola*>(mat[x][y])) {
+		if (caballero->getListaArmas()->cantidadBallestas() > 0) {
+			caballero->getListaArmas()->eliminar("ballesta");
+			cout << "gargola derrotada" << endl;
+			delete mat[x][y]; mat[x][y] = nullptr;
+		}
+		else {
+			cout << "recibio danio de gargola" << endl;
+			mat[x][y]->atacar(caballero);
+			delete mat[x][y]; mat[x][y] = nullptr;
+		}
+	}
+
+	if (dynamic_cast<Ogro*>(mat[x][y])) {
+		if (caballero->getListaArmas()->cantidadDagas() > 0) {
+			caballero->getListaArmas()->eliminar("daga");
+			cout << "ogro derrotado con daga" << endl;
+			delete mat[x][y]; mat[x][y] = nullptr;
+		}
+		if (caballero->getListaArmas()->cantidadEspadas() > 0 && caballero->getListaArmas()->cantidadDagas()==0) {
+			caballero->getListaArmas()->eliminar("espada");
+			cout << "ogro derrotado con despada" << endl;
+			delete mat[x][y]; mat[x][y] = nullptr;
+		}
+		if (caballero->getListaArmas()->cantidadEspadas() == 0 && caballero->getListaArmas()->cantidadDagas() == 0) {
+			mat[x][y]->atacar(caballero);
+			cout << "recibio danio de ogro" << endl;
+			delete mat[x][y]; mat[x][y] = nullptr;
+		}
+	}
+	//poner ifelse en lugar de 2 ifs
+	if (dynamic_cast<Tentaculos*>(mat[x][y])) {
+		if (caballero->getListaArmas()->cantidadYescas() > 0) {
+			caballero->getListaArmas()->eliminar("yesca");
+			cout << "tentaculo derrotado con yesca" << endl;
+			delete mat[x][y]; mat[x][y] = nullptr;
+		}
+		if (caballero->getListaArmas()->cantidadEspadas() > 0 && caballero->getListaArmas()->cantidadYescas() == 0) {
+			caballero->getListaArmas()->eliminar("espada");
+			cout << "tentaculo derrotado con espada" << endl;
+			delete mat[x][y]; mat[x][y] = nullptr;
+		}
+		if (caballero->getListaArmas()->cantidadEspadas() == 0 && caballero->getListaArmas()->cantidadYescas() == 0) {
+			mat[x][y]->atacar(caballero);
+			cout << "recibio danio de tentaculo" << endl;
+			delete mat[x][y]; mat[x][y] = nullptr;
+		}
+	}
+
+	if (dynamic_cast<Hierba*>(mat[x][y])) {
+		mat[x][y]->curar(caballero);
+		cout << "curado!" << endl;
+		delete mat[x][y]; mat[x][y] = nullptr;
+	}
+
+	
 }

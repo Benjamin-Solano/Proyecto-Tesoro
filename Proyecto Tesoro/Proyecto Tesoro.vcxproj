@@ -137,6 +137,7 @@
     <ClInclude Include="Espada.h" />
     <ClInclude Include="Gargola.h" />
     <ClInclude Include="hierba.h" />
+    <ClInclude Include="Juego.h" />
     <ClInclude Include="ListaArmas.h" />
     <ClInclude Include="Matriz.h" />
     <ClInclude Include="NodoA.h" />
@@ -155,6 +156,7 @@
     <ClCompile Include="Espada.cpp" />
     <ClCompile Include="Gargola.cpp" />
     <ClCompile Include="Hierba.cpp" />
+    <ClCompile Include="Juego.cpp" />
     <ClCompile Include="ListaArmas.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Matriz.cpp" />
