@@ -1,13 +1,11 @@
 #include "Ballesta.h"
 
-Ballesta::Ballesta() : Arma(), elemento("x"), elemento2("x") {}
+Ballesta::Ballesta() : Arma(true, "ballesta", "aire", "x") {}
 
-Ballesta::Ballesta(bool activo, string tipo)
-    : Arma(activo, tipo), elemento("aire"), elemento2("x") {
-}
+
 Ballesta::~Ballesta() {}
 string Ballesta::getElemento() { return elemento; }
-void Ballesta::setElemento(string elemento) { this->elemento = elemento; }
+
 
 string Ballesta::toString() {
     stringstream s;

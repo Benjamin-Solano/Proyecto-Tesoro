@@ -130,6 +130,7 @@
     <ClInclude Include="Arma.h" />
     <ClInclude Include="Ballesta.h" />
     <ClInclude Include="Caballero.h" />
+    <ClInclude Include="Cofre.h" />
     <ClInclude Include="Cosa.h" />
     <ClInclude Include="Daga.h" />
     <ClInclude Include="Enemigo.h" />
@@ -137,6 +138,7 @@
     <ClInclude Include="Gargola.h" />
     <ClInclude Include="hierba.h" />
     <ClInclude Include="ListaArmas.h" />
+    <ClInclude Include="Matriz.h" />
     <ClInclude Include="NodoA.h" />
     <ClInclude Include="Ogro.h" />
     <ClInclude Include="Tentaculos.h" />
@@ -146,6 +148,7 @@
     <ClCompile Include="Arma.cpp" />
     <ClCompile Include="Ballesta.cpp" />
     <ClCompile Include="Caballero.cpp" />
+    <ClCompile Include="Cofre.cpp" />
     <ClCompile Include="Cosa.cpp" />
     <ClCompile Include="Daga.cpp" />
     <ClCompile Include="Enemigo.cpp" />
@@ -154,6 +157,7 @@
     <ClCompile Include="Hierba.cpp" />
     <ClCompile Include="ListaArmas.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Matriz.cpp" />
     <ClCompile Include="NodoA.cpp" />
     <ClCompile Include="Ogro.cpp" />
     <ClCompile Include="Tentaculos.cpp" />

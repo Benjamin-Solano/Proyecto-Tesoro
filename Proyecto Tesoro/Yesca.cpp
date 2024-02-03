@@ -1,9 +1,6 @@
 #include "Yesca.h"
-Yesca::Yesca() : Arma(), elemento("x") {}
+Yesca::Yesca() : Arma(true, "yesca", "agua", "x") {}
 
-Yesca::Yesca(bool activo, string tipo)
-    : Arma(activo, tipo), elemento("agua"), elemento2("x") {
-}
 Yesca::~Yesca() {}
 string Yesca::getElemento() const { return elemento; }
 void Yesca::setElemento(string elemento) { this->elemento = elemento; }

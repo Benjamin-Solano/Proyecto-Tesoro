@@ -1,9 +1,7 @@
 #include "Espada.h"
-Espada::Espada() : Arma(), elemento("x") {}
+Espada::Espada() : Arma(true,"espada", "tierra", "agua") {}
 
-Espada::Espada(bool activo, string tipo)
-    : Arma(activo, tipo), elemento("tierra"), elemento2("agua") {
-}
+
 Espada::~Espada() {}
 string Espada::getElemento() const { return elemento; }
 void Espada::setElemento(string elemento) { this->elemento = elemento; }

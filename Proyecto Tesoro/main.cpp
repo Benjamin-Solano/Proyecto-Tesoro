@@ -9,10 +9,11 @@
 #include "Tentaculos.h"
 #include "hierba.h"
 #include "Enemigo.h"
+#include "Matriz.h"
 
 int main() {
 
-	Arma* a = new Ballesta(true, "ballesta");
+	/*Arma* a = new Ballesta(true, "ballesta");
 	Arma* a1 = new Ballesta(true, "ballesta");
 	Arma* b = new Espada(true, "espada");
 	Arma* c = new Yesca(true, "yesca");
@@ -56,7 +57,13 @@ int main() {
 	// Atacando al caballero
 	gargola->atacar(caba, gargola);
 	cout << "Vida del Caballero: " << caba->getHp() << endl;
+*/
 
+	Matriz* mat = new Matriz();
+
+	/*mat->ingresar7Espadas();
+	mat->ingresar6Ballestas();*/
+	cout << mat->toString() << endl;
 
 	return 0;
 }
