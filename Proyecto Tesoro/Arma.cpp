@@ -14,6 +14,14 @@ Arma::Arma(bool activo, string tipo, string elemento, string elemento2)
 
 Arma:: ~Arma() {}
 string Arma::getTipo() { return tipo; }
+string Arma::getElemento()
+{
+    return elemento;
+}
+string Arma::getElemento2()
+{
+    return elemento2;
+}
 void Arma::setTipo(string tipo) { this->tipo = tipo; }
 
 string Arma::toString() {

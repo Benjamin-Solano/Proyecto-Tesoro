@@ -1,14 +1,3 @@
-#include "Ballesta.h"
-#include "Espada.h"
-#include "Yesca.h"
-#include "Daga.h"
-#include "ListaArmas.h"
-#include "Caballero.h"
-#include "Ogro.h"
-#include "Gargola.h"
-#include "Tentaculos.h"
-#include "hierba.h"
-#include "Enemigo.h"
 #include "Matriz.h"
 
 int main() {
