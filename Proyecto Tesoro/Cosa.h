@@ -11,24 +11,22 @@ protected:
     bool activo;
 
 public:
-    Cosa() { activo = true; }
-    Cosa(bool activo) : activo(activo) {}
-    virtual ~Cosa() {}
-    bool getActivo() const { return activo; }
-    void setActivo(bool activo) { this->activo = activo; }
+    Cosa();
+    Cosa(bool activo);
+    virtual ~Cosa();
+    bool getActivo() const;
+    void setActivo(bool activo);
 
-    virtual string toString() {
-        return "aa";
-    }
+    virtual string toString();
 
-    virtual void setHp(int hp) { }
+    virtual void setHp(int hp);
     //virtual void setLista() { }
 
-    virtual int getHp() { return 100; }
+    virtual int getHp();
     //virtual ListaArmas* getListaArmas() { return nullptr; }
 
-    virtual void eliminarArma(string tipo) { }
+    virtual void eliminarArma(string tipo);
 
-    virtual void curar(Cosa*) { }
+    virtual void curar(Cosa*);
 
 };

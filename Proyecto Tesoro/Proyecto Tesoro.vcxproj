@@ -132,7 +132,6 @@
     <ClInclude Include="Caballero.h" />
     <ClInclude Include="Cosa.h" />
     <ClInclude Include="Daga.h" />
-    <ClInclude Include="Elemento.h" />
     <ClInclude Include="Enemigo.h" />
     <ClInclude Include="Espada.h" />
     <ClInclude Include="Gargola.h" />

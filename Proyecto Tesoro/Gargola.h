@@ -5,7 +5,5 @@ class Gargola : public Enemigo {
 public:
 	Gargola();
 	~Gargola();
-
 	string toString();
-
 };

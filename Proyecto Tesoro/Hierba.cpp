@@ -16,7 +16,7 @@ void Hierba::curar(Cosa* caballero) {
 string Hierba::toString(){
 	stringstream s;
 	s << "==== HIERBA MEDICINAL ====" << endl;
-	s << "Vida restaurada: " << vida_restaurada << endl;
+	s << "Efecto: +" << vida_restaurada <<" HP" << endl;
 	s << "==========================" << endl;
 	return s.str();
 }

@@ -5,7 +5,5 @@ class Ogro : public Enemigo {
 public:
 	Ogro();
 	~Ogro();
-
 	string toString();
-
 };

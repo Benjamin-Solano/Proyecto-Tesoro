@@ -1,7 +1,3 @@
-﻿  Enemigo.cpp
-  Gargola.cpp
-  Ogro.cpp
-  Tentaculos.cpp
-  main.cpp
-  Generando código...
+﻿  Hierba.cpp
+C:\Users\user\Desktop\Proyecto Knight\Proyecto Tesoro\Hierba.cpp(10,32): warning C4552: "+": el resultado de la expresión no se usa
   Proyecto Tesoro.vcxproj -> C:\Users\user\Desktop\Proyecto Knight\x64\Debug\Proyecto Tesoro.exe
