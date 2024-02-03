@@ -13,6 +13,9 @@ void Enemigo::setDanio(int nuevoDanio) { danio = nuevoDanio; }
 string Enemigo::getElemento() { return elemento; }
 int Enemigo::getDanio() { return danio; }
 
+void Enemigo::atacar(Cosa* caballero, Enemigo* enemigo) {
+	caballero->setHp(caballero->getHp() - enemigo->getDanio());
+}
 
 
 Enemigo::~Enemigo(){ }

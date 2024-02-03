@@ -27,7 +27,7 @@ int main() {
 	Cosa* caba = new Caballero(lista, true);
 
 	cout << caba->toString() << endl;
-	caba->setHp();
+	caba->setHp(100);
 	cout << caba->getHp() << endl;
 	caba->eliminarArma("yesca");
 	cout << caba->toString() << endl;
@@ -47,6 +47,16 @@ int main() {
 
 	Enemigo* gargola = new Gargola();
 	cout << gargola->toString() << endl;
+
+
+	// Curando al caballero
+	item1->curar(caba);
+	cout << "Vida del Caballero: " << caba->getHp() << endl;
+
+	// Atacando al caballero
+	gargola->atacar(caba, gargola);
+	cout << "Vida del Caballero: " << caba->getHp() << endl;
+
 
 	return 0;
 }

@@ -21,12 +21,14 @@ public:
         return "aa";
     }
 
-    virtual void setHp() { }
+    virtual void setHp(int hp) { }
     //virtual void setLista() { }
 
     virtual int getHp() { return 100; }
     //virtual ListaArmas* getListaArmas() { return nullptr; }
 
     virtual void eliminarArma(string tipo) { }
+
+    virtual void curar(Cosa*) { }
 
 };

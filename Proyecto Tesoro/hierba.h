@@ -1,5 +1,6 @@
 #pragma once
 #include "Cosa.h"
+#include "Caballero.h"
 
 class Hierba : public Cosa {
 private:
@@ -12,6 +13,8 @@ public:
 	void setEstado(bool);
 	void setHp();
 	
+	void curar(Cosa*);
+
 
 	string toString();
 
