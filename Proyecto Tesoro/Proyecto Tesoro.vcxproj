@@ -133,9 +133,14 @@
     <ClInclude Include="Cosa.h" />
     <ClInclude Include="Daga.h" />
     <ClInclude Include="Elemento.h" />
+    <ClInclude Include="Enemigo.h" />
     <ClInclude Include="Espada.h" />
+    <ClInclude Include="Gargola.h" />
+    <ClInclude Include="hierba.h" />
     <ClInclude Include="ListaArmas.h" />
     <ClInclude Include="NodoA.h" />
+    <ClInclude Include="Ogro.h" />
+    <ClInclude Include="Tentaculos.h" />
     <ClInclude Include="Yesca.h" />
   </ItemGroup>
   <ItemGroup>
@@ -144,10 +149,15 @@
     <ClCompile Include="Caballero.cpp" />
     <ClCompile Include="Cosa.cpp" />
     <ClCompile Include="Daga.cpp" />
+    <ClCompile Include="Enemigo.cpp" />
     <ClCompile Include="Espada.cpp" />
+    <ClCompile Include="Gargola.cpp" />
+    <ClCompile Include="Hierba.cpp" />
     <ClCompile Include="ListaArmas.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NodoA.cpp" />
+    <ClCompile Include="Ogro.cpp" />
+    <ClCompile Include="Tentaculos.cpp" />
     <ClCompile Include="Yesca.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

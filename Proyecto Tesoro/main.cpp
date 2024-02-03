@@ -4,6 +4,12 @@
 #include "Daga.h"
 #include "ListaArmas.h"
 #include "Caballero.h"
+#include "Ogro.h"
+#include "Gargola.h"
+#include "Tentaculos.h"
+#include "hierba.h"
+#include "Enemigo.h"
+
 int main() {
 
 	Arma* a = new Ballesta(true, "ballesta");
@@ -21,12 +27,26 @@ int main() {
 	Cosa* caba = new Caballero(lista, true);
 
 	cout << caba->toString() << endl;
-	caba->setHp(33);
+	caba->setHp();
 	cout << caba->getHp() << endl;
 	caba->eliminarArma("yesca");
 	cout << caba->toString() << endl;
 
+	system("pause");
+	system("cls");
 
+	// Prueba de enemigos y hierba
+	Cosa* item1 = new Hierba();
+	cout << item1->toString() << endl;
+	
+	Enemigo* ogro = new Ogro();
+	cout << ogro->toString() << endl;
+
+	Enemigo* tentaculo = new Tentaculos();
+	cout << tentaculo->toString() << endl;
+
+	Enemigo* gargola = new Gargola();
+	cout << gargola->toString() << endl;
 
 	return 0;
 }
