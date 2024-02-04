@@ -14,6 +14,9 @@ string Enemigo::getElemento() { return elemento; }
 int Enemigo::getDanio() { return danio; }
 
 void Enemigo::atacar(Cosa* caballero) {
+	if (caballero->getHp() - danio <= 0) {
+		caballero->setHp(0); return;
+	}
 	caballero->setHp(caballero->getHp() - danio);
 }
 

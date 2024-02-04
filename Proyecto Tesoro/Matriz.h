@@ -19,14 +19,22 @@ private:
 	int fil;
 	int col;
 	Cosa*** mat;
-	
+	int f = 0; int c = 0; //lugar actual del caballero
 
 public:
 	Matriz();
 	Matriz(int x, int y);
 	~Matriz();
+	Cosa*** getMat() { return mat; }
+	int getFil() { return fil; } 
+	int getCol() { return col; }
+	int getFilActual() { return f; } 
+	int getColActual() { return c; }
 
-	int x; int y; //lugar actual del caballero
+	void setFilActual(int f) { this->f = f; }
+	void setColActual(int c) { this->c = c; }
+
+	Cosa* getPosicionActual() { return mat[f][c]; }
 
 	// 9 x 9: 7 espadas, 6 ballestas, 10 yescas 5 dagas, 
 	// 14 tentáculos, 12 ogros, 10 gárgolas, 6 hierbas y el cofre
@@ -50,10 +58,15 @@ public:
 	void eliminar(int x, int y);
 
 	string toString();
+	string imprimir();
 
 	void verificar(int x, int y, Caballero* caballero);
 
-	
+	Cosa* getCosa(int x, int y);
+
+	bool esValida(int x, int y);
+	bool hayCofre(int x, int y);
+	void movimiento(char wasd, Caballero* cab);
 
 
 };

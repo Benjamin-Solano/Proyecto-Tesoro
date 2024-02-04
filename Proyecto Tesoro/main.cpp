@@ -1,4 +1,4 @@
-#include "Matriz.h"
+#include "Juego.h"
 
 int main() {
 
@@ -52,6 +52,7 @@ int main() {
 	gargola->atacar(caba, gargola);
 	cout << "Vida del Caballero: " << caba->getHp() << endl;
 */
+
 	/*Arma* espada = new Espada();
 	ListaArmas* list = new ListaArmas();
 	list->ingresarUltimo(espada);
@@ -69,20 +70,31 @@ int main() {
 	mat->ingresar6Ballestas();*/
 	//cout << mat->toString() << endl;
 
-	ListaArmas* list = new ListaArmas();
+	//probar movimiento
+	/*ListaArmas* list = new ListaArmas();
 	Caballero* cab = new Caballero(list, true);
-	Matriz* mat = new Matriz(2,2);
+	Matriz* mat = new Matriz();
 	cout << mat->toString() << endl;
+	mat->movimiento('d', cab);
+	cout << mat->toString() << endl;
+	mat->movimiento('w', cab);
+	cout << mat->toString() << endl;*/
 
-	mat->verificar(0, 0, cab);//espada
-	mat->verificar(0, 1, cab);//ogro
-	mat->verificar(1, 1, cab);//ballesta
+	//verificar
+	
+	//mat->verificar(0, 0, cab);//espada
+	//mat->verificar(0, 1, cab);//ogro
+	//mat->verificar(1, 1, cab);//ballesta
 	//mat->verificar(1, 0, cab);//gargola
 	
+	//ts
+	// 
+	//cout << mat->toString() << endl;
+	// << cab->getListaArmas()->toString() << endl;
+
+	Juego j;
 
 
-	cout << mat->toString() << endl;
-	cout << cab->getListaArmas()->toString() << endl;
 
 	return 0;
 }

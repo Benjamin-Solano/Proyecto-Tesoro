@@ -2,6 +2,7 @@
 
 Matriz::Matriz()
 {
+	f = 0;c = 0;
 	fil = 9; col = 9;
 	mat = new Cosa * *[fil];
 	for (int i = 0; i < fil; i++) {
@@ -22,11 +23,12 @@ Matriz::Matriz()
 	ingresar10Gargolas();
 	ingresar6Hierbas();
 	ingresarCofre();
+	
 }
 
 Matriz::Matriz(int x, int y)
 {
-
+	//para probar el correcto funcionamiento
 	fil = x; col = y;
 	mat = new Cosa * *[fil];
 	for (int i = 0; i < fil; i++) {
@@ -73,7 +75,7 @@ void Matriz::ingresar7Espadas()
 	do {
 		int randX = 0 + rand() % 9;
 		int randY = 0 + rand() % 9;
-		if (mat[randX][randY] == nullptr) {
+		if (mat[randX][randY] == nullptr && (randX != 0 || randY != 0)) {
 			//cout << randX << " -- " << randY << endl;
 			mat[randX][randY] = new Espada();
 			cont++;
@@ -94,7 +96,7 @@ void Matriz::ingresar6Ballestas()
 	do {
 		int randX = 0 + rand() % 9;
 		int randY = 0 + rand() % 9;
-		if (mat[randX][randY] == nullptr) {
+		if (mat[randX][randY] == nullptr && (randX != 0 || randY != 0)) {
 			//cout << randX << " -- " << randY << endl;
 			mat[randX][randY] = new Ballesta();
 			cont++;
@@ -111,7 +113,7 @@ void Matriz::ingresar10Yescas()
 	do {
 		int randX = 0 + rand() % 9;
 		int randY = 0 + rand() % 9;
-		if (mat[randX][randY] == nullptr) {
+		if (mat[randX][randY] == nullptr && (randX != 0 || randY != 0)) {
 			//cout << randX << " -- " << randY << endl;
 			mat[randX][randY] = new Yesca();
 			cont++;
@@ -128,7 +130,7 @@ void Matriz::ingresar5Dagas()
 	do {
 		int randX = 0 + rand() % 9;
 		int randY = 0 + rand() % 9;
-		if (mat[randX][randY] == nullptr) {
+		if (mat[randX][randY] == nullptr && (randX != 0 || randY != 0)) {
 			//cout << randX << " -- " << randY << endl;
 			mat[randX][randY] = new Daga();
 			cont++;
@@ -145,7 +147,7 @@ void Matriz::ingresar14Tent()
 	do {
 		int randX = 0 + rand() % 9;
 		int randY = 0 + rand() % 9;
-		if (mat[randX][randY] == nullptr) {
+		if (mat[randX][randY] == nullptr && (randX != 0 || randY != 0)) {
 			//cout << randX << " -- " << randY << endl;
 			mat[randX][randY] = new Tentaculos();
 			cont++;
@@ -162,7 +164,7 @@ void Matriz::ingresar12ogros()
 	do {
 		int randX = 0 + rand() % 9;
 		int randY = 0 + rand() % 9;
-		if (mat[randX][randY] == nullptr) {
+		if (mat[randX][randY] == nullptr && (randX != 0 || randY != 0)) {
 			//cout << randX << " -- " << randY << endl;
 			mat[randX][randY] = new Ogro();
 			cont++;
@@ -179,7 +181,7 @@ void Matriz::ingresar10Gargolas()
 	do {
 		int randX = 0 + rand() % 9;
 		int randY = 0 + rand() % 9;
-		if (mat[randX][randY] == nullptr) {
+		if (mat[randX][randY] == nullptr && (randX != 0 || randY != 0)) {
 			//cout << randX << " -- " << randY << endl;
 			mat[randX][randY] = new Gargola();
 			cont++;
@@ -196,7 +198,7 @@ void Matriz::ingresar6Hierbas()
 	do {
 		int randX = 0 + rand() % 9;
 		int randY = 0 + rand() % 9;
-		if (mat[randX][randY] == nullptr) {
+		if (mat[randX][randY] == nullptr && (randX != 0 || randY != 0)) {
 			//cout << randX << " -- " << randY << endl;
 			mat[randX][randY] = new Hierba();
 			cont++;
@@ -213,7 +215,7 @@ void Matriz::ingresarCofre()
 	do {
 		int randX = 0 + rand() % 9;
 		int randY = 0 + rand() % 9;
-		if (mat[randX][randY] == nullptr) {
+		if (mat[randX][randY] == nullptr && (randX!=0 || randY!=0)) {
 			//cout << randX << " -- " << randY << endl;
 			mat[randX][randY] = new Cofre();
 			cont++;
@@ -291,6 +293,57 @@ string Matriz::toString()
 	return s.str();
 }
 
+string Matriz::imprimir()
+{
+	stringstream s;
+
+
+
+	for (int i = 0;i < fil;i++) {
+		for (int j = 0; j < col; j++) {
+			if (dynamic_cast<Espada*>(mat[i][j]))
+				s << " [ E ] ";
+
+			if (dynamic_cast<Ballesta*>(mat[i][j]))
+				s << " [ B ] ";
+
+			if (dynamic_cast<Yesca*>(mat[i][j]))
+				s << " [ Y ] ";
+
+			if (dynamic_cast<Daga*>(mat[i][j]))
+				s << " [ D ] ";
+
+			if (dynamic_cast<Hierba*>(mat[i][j]))
+				s << " [ H ] ";
+
+			if (dynamic_cast<Gargola*>(mat[i][j]))
+				s << " [ G ] ";
+
+			if (dynamic_cast<Ogro*>(mat[i][j]))
+				s << " [ O ] ";
+
+			if (dynamic_cast<Tentaculos*>(mat[i][j]))
+				s << " [ T ] ";
+
+			if (dynamic_cast<Cofre*>(mat[i][j]))
+				s << " [ $ ] ";
+
+			if (mat[i][j] == nullptr)
+				s << " [   ] ";
+
+			if(dynamic_cast<Caballero*>(mat[i][j]))
+				s << "  {:b  ";
+			
+
+		}
+		s << '\n';
+	}
+	s << '\n';
+
+	return s.str();
+}
+
+
 void Matriz::verificar(int x, int y, Caballero* caballero)
 {
 	if (mat[x][y] == nullptr) {
@@ -332,11 +385,11 @@ void Matriz::verificar(int x, int y, Caballero* caballero)
 	if (dynamic_cast<Gargola*>(mat[x][y])) {
 		if (caballero->getListaArmas()->cantidadBallestas() > 0) {
 			caballero->getListaArmas()->eliminar("ballesta");
-			cout << "gargola derrotada! -1 ballesta" << endl;
+			cout << "Gargola derrotada! -1 ballesta" << endl;
 			delete mat[x][y]; mat[x][y] = nullptr;
 		}
 		else {
-			cout << "recibio danio de gargola" << endl;
+			cout << "Recibio danio de gargola" << endl;
 			mat[x][y]->atacar(caballero);
 			delete mat[x][y]; mat[x][y] = nullptr;
 		}
@@ -345,19 +398,19 @@ void Matriz::verificar(int x, int y, Caballero* caballero)
 	if (dynamic_cast<Ogro*>(mat[x][y])) {
 		if (caballero->getListaArmas()->cantidadDagas() > 0) {
 			caballero->getListaArmas()->eliminar("daga");
-			cout << "ogro derrotado! -1 daga" << endl;
+			cout << "Ogro derrotado! -1 daga" << endl;
 			delete mat[x][y]; mat[x][y] = nullptr;
 			return;
 		}
 		if (caballero->getListaArmas()->cantidadEspadas() > 0 && caballero->getListaArmas()->cantidadDagas()==0) {
 			caballero->getListaArmas()->eliminar("espada");
 			delete mat[x][y]; mat[x][y] = nullptr;
-			cout << "ogro derrotado! -1 espada" << endl;
+			cout << "Ogro derrotado! -1 espada" << endl;
 			return;
 		}
 		if (caballero->getListaArmas()->cantidadEspadas() == 0 && caballero->getListaArmas()->cantidadDagas() == 0) {
 			mat[x][y]->atacar(caballero);
-			cout << "recibio danio de ogro" << endl;
+			cout << "Recibio danio de ogro" << endl;
 			delete mat[x][y]; mat[x][y] = nullptr;
 			return;
 		}
@@ -365,19 +418,19 @@ void Matriz::verificar(int x, int y, Caballero* caballero)
 	if (dynamic_cast<Tentaculos*>(mat[x][y])) {
 		if (caballero->getListaArmas()->cantidadYescas() > 0) {
 			caballero->getListaArmas()->eliminar("yesca");
-			cout << "tentaculo derrotado! -1 yesca" << endl;
+			cout << "Tentaculo derrotado! -1 yesca" << endl;
 			delete mat[x][y]; mat[x][y] = nullptr;
 			return;
 		}
 		if (caballero->getListaArmas()->cantidadEspadas() > 0 && caballero->getListaArmas()->cantidadYescas() == 0) {
 			caballero->getListaArmas()->eliminar("espada");
-			cout << "tentaculo derrotado! -1 espada" << endl;
+			cout << "Tentaculo derrotado! -1 espada" << endl;
 			delete mat[x][y]; mat[x][y] = nullptr;
 			return;
 		}
 		if (caballero->getListaArmas()->cantidadEspadas() == 0 && caballero->getListaArmas()->cantidadYescas() == 0) {
 			mat[x][y]->atacar(caballero);
-			cout << "recibio danio de tentaculo" << endl;
+			cout << "Tecibio danio de tentaculo" << endl;
 			delete mat[x][y]; mat[x][y] = nullptr;
 			return;
 		}
@@ -385,10 +438,122 @@ void Matriz::verificar(int x, int y, Caballero* caballero)
 
 	if (dynamic_cast<Hierba*>(mat[x][y])) {
 		mat[x][y]->curar(caballero);
-		cout << "curado!" << endl;
+		cout << "Curado!" << endl;
 		delete mat[x][y]; mat[x][y] = nullptr;
 		return;
 	}
 
+	if (dynamic_cast<Cofre*>(mat[x][y])) {
+		cout << "HA ENCONTRADO EL COFRE!!" << endl;
+		delete mat[x][y]; mat[x][y] = nullptr;
+		return;
+	}
+}
+
+Cosa* Matriz::getCosa(int x, int y)
+{
+	if (mat[x][y] == nullptr)
+		return nullptr;
+
+
+	return mat[x][y];
+			
+}
+
+bool Matriz::esValida(int x, int y)
+{
+	if (x < 0 || x>8 || y < 0 || y>8)
+		return false;
+
 	
+
+}
+
+bool Matriz::hayCofre(int x, int y)
+{
+	if (dynamic_cast<Cofre*>(mat[x][y]))
+		return true;
+	return false;
+}
+
+void Matriz::movimiento(char wasd, Caballero* cab)
+{
+	if (wasd == 'w') {//arriba
+		if (esValida(f - 1, c)) {
+			
+			if (hayCofre(f - 1, c)) {
+				f = f - 1;
+				cout << "HAY UN COFRE!" << endl;
+				return;
+			}
+
+			f = f - 1;
+			verificar(f, c, cab);
+			delete mat[f + 1][c]; mat[f + 1][c] = nullptr;
+			mat[f][c] = new Caballero(cab);
+			return;
+		}
+		else {
+			cout << "No es valida" << endl;
+		}
+			
+	}
+	if (wasd == 's') {//abajo
+		if (esValida(f + 1, c)) {
+
+			if (hayCofre(f + 1, c)) {
+				f = f + 1;
+				cout << "HAY UN COFRE!" << endl;
+				return;
+			}
+
+			f = f + 1;
+			verificar(f, c, cab); 
+			delete mat[f-1][c]; mat[f-1][c] = nullptr;
+			mat[f][c] = new Caballero(cab);
+			return;
+		}
+		else {
+			cout << "No es valida" << endl;
+		}
+	}
+	if (wasd == 'a') {//izq
+		if (esValida(f , c-1)) {
+
+			if (hayCofre(f, c - 1)) {
+				cout << "HAY UN COFRE!" << endl;
+				c = c - 1;
+				return;
+			}
+
+			c = c - 1;
+			verificar(f, c, cab);
+			delete mat[f][c + 1]; mat[f][c + 1] = nullptr;
+			mat[f][c] = new Caballero(cab);
+			return;
+		}
+		else {
+			cout << "No es valida" << endl;
+		}
+	}
+	if (wasd == 'd') {//der
+		if (esValida(f , c+1)) {
+
+			if (hayCofre(f, c + 1)) {
+				c = c + 1;
+				cout << "HAY UN COFRE!" << endl;
+				return;
+			}
+
+			c = c + 1;
+			verificar(f, c, cab);
+			delete mat[f][c - 1]; mat[f][c - 1] = nullptr;
+			mat[f][c] = new Caballero(cab);
+			return;
+		}
+		else {
+			cout << "No es valida" << endl;
+		} 
+	}
+
 }

@@ -8,6 +8,10 @@ private:
 public:
 	Caballero();
 	Caballero(ListaArmas* lista, bool activo);
+	Caballero(Caballero* cab) {
+		lista = new ListaArmas(cab->getListaArmas());
+		hp = cab->getHp();
+	}
 	~Caballero();
 	void setHp(int hp);
 	void setLista(ListaArmas* lista);
