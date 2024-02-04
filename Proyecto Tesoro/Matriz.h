@@ -23,6 +23,7 @@ private:
 
 public:
 	Matriz();
+	Matriz(int x, int y);
 	~Matriz();
 
 	int x; int y; //lugar actual del caballero

@@ -52,7 +52,7 @@ int main() {
 	gargola->atacar(caba, gargola);
 	cout << "Vida del Caballero: " << caba->getHp() << endl;
 */
-	Arma* espada = new Espada();
+	/*Arma* espada = new Espada();
 	ListaArmas* list = new ListaArmas();
 	list->ingresarUltimo(espada);
 	Caballero* cab = new Caballero(list, true);
@@ -63,11 +63,26 @@ int main() {
 	mat->verificar(3,3, cab);
 	mat->verificar(4,4, cab);
 	cout << mat->toString() << endl;
-	cout << cab->toString() << endl;
+	cout << cab->toString() << endl;*/
 
 	/*mat->ingresar7Espadas();
 	mat->ingresar6Ballestas();*/
 	//cout << mat->toString() << endl;
+
+	ListaArmas* list = new ListaArmas();
+	Caballero* cab = new Caballero(list, true);
+	Matriz* mat = new Matriz(2,2);
+	cout << mat->toString() << endl;
+
+	mat->verificar(0, 0, cab);//espada
+	mat->verificar(0, 1, cab);//ogro
+	mat->verificar(1, 1, cab);//ballesta
+	//mat->verificar(1, 0, cab);//gargola
+	
+
+
+	cout << mat->toString() << endl;
+	cout << cab->getListaArmas()->toString() << endl;
 
 	return 0;
 }

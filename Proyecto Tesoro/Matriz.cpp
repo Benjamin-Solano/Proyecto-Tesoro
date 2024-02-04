@@ -24,6 +24,28 @@ Matriz::Matriz()
 	ingresarCofre();
 }
 
+Matriz::Matriz(int x, int y)
+{
+
+	fil = x; col = y;
+	mat = new Cosa * *[fil];
+	for (int i = 0; i < fil; i++) {
+		mat[i] = new Cosa * [col];
+	}
+	for (int i = 0; i < fil; i++) {
+		for (int j = 0; j < col; j++) {
+			mat[i][j] = nullptr;
+		}
+	}
+
+	mat[0][0] = new Espada();
+	mat[0][1] = new Ogro();
+	mat[1][0] = new Gargola();
+	mat[1][1] = new Ballesta();
+
+
+}
+
 Matriz::~Matriz()
 {
 	for (int i = 0; i < fil; i++) {
@@ -279,26 +301,38 @@ void Matriz::verificar(int x, int y, Caballero* caballero)
 	if (dynamic_cast<Arma*>(mat[x][y])) {
 		if (mat[x][y]->getTipo() == "ballesta") {
 			caballero->getListaArmas()->ingresarUltimo((Ballesta*)mat[x][y]);
+			cout << "recibio un arma: " << mat[x][y]->getTipo() << endl;
+			delete mat[x][y]; mat[x][y] = nullptr;
+			return;
 		}
 		if (mat[x][y]->getTipo() == "espada") {
 			caballero->getListaArmas()->ingresarUltimo((Espada*)mat[x][y]);
+			cout << "recibio un arma: " << mat[x][y]->getTipo() << endl;
+			delete mat[x][y]; mat[x][y] = nullptr;
+			return;
 		}
 		if (mat[x][y]->getTipo() == "yesca") {
 			caballero->getListaArmas()->ingresarUltimo((Yesca*)mat[x][y]);
+			cout << "recibio un arma: " << mat[x][y]->getTipo() << endl;
+			delete mat[x][y]; mat[x][y] = nullptr;
+			return;
 		}
 		if (mat[x][y]->getTipo() == "daga") {
 			caballero->getListaArmas()->ingresarUltimo((Daga*)mat[x][y]);
+			cout << "recibio un arma: " << mat[x][y]->getTipo() << endl;
+			delete mat[x][y]; mat[x][y] = nullptr;
+			return;
 		}
 		//caballero->getListaArmas()->ingresarUltimo((Arma*)mat[x][y]);
-		cout << "recibio un arma: " <<mat[x][y]->getTipo() <<endl;
+		/*cout << "recibio un arma: " <<mat[x][y]->getTipo() <<endl;
 		delete mat[x][y]; mat[x][y] = nullptr;
-		return;
+		return;*/
 	}
 
 	if (dynamic_cast<Gargola*>(mat[x][y])) {
 		if (caballero->getListaArmas()->cantidadBallestas() > 0) {
 			caballero->getListaArmas()->eliminar("ballesta");
-			cout << "gargola derrotada" << endl;
+			cout << "gargola derrotada! -1 ballesta" << endl;
 			delete mat[x][y]; mat[x][y] = nullptr;
 		}
 		else {
@@ -311,36 +345,41 @@ void Matriz::verificar(int x, int y, Caballero* caballero)
 	if (dynamic_cast<Ogro*>(mat[x][y])) {
 		if (caballero->getListaArmas()->cantidadDagas() > 0) {
 			caballero->getListaArmas()->eliminar("daga");
-			cout << "ogro derrotado con daga" << endl;
+			cout << "ogro derrotado! -1 daga" << endl;
 			delete mat[x][y]; mat[x][y] = nullptr;
+			return;
 		}
 		if (caballero->getListaArmas()->cantidadEspadas() > 0 && caballero->getListaArmas()->cantidadDagas()==0) {
 			caballero->getListaArmas()->eliminar("espada");
-			cout << "ogro derrotado con despada" << endl;
 			delete mat[x][y]; mat[x][y] = nullptr;
+			cout << "ogro derrotado! -1 espada" << endl;
+			return;
 		}
 		if (caballero->getListaArmas()->cantidadEspadas() == 0 && caballero->getListaArmas()->cantidadDagas() == 0) {
 			mat[x][y]->atacar(caballero);
 			cout << "recibio danio de ogro" << endl;
 			delete mat[x][y]; mat[x][y] = nullptr;
+			return;
 		}
 	}
-	//poner ifelse en lugar de 2 ifs
 	if (dynamic_cast<Tentaculos*>(mat[x][y])) {
 		if (caballero->getListaArmas()->cantidadYescas() > 0) {
 			caballero->getListaArmas()->eliminar("yesca");
-			cout << "tentaculo derrotado con yesca" << endl;
+			cout << "tentaculo derrotado! -1 yesca" << endl;
 			delete mat[x][y]; mat[x][y] = nullptr;
+			return;
 		}
 		if (caballero->getListaArmas()->cantidadEspadas() > 0 && caballero->getListaArmas()->cantidadYescas() == 0) {
 			caballero->getListaArmas()->eliminar("espada");
-			cout << "tentaculo derrotado con espada" << endl;
+			cout << "tentaculo derrotado! -1 espada" << endl;
 			delete mat[x][y]; mat[x][y] = nullptr;
+			return;
 		}
 		if (caballero->getListaArmas()->cantidadEspadas() == 0 && caballero->getListaArmas()->cantidadYescas() == 0) {
 			mat[x][y]->atacar(caballero);
 			cout << "recibio danio de tentaculo" << endl;
 			delete mat[x][y]; mat[x][y] = nullptr;
+			return;
 		}
 	}
 
@@ -348,6 +387,7 @@ void Matriz::verificar(int x, int y, Caballero* caballero)
 		mat[x][y]->curar(caballero);
 		cout << "curado!" << endl;
 		delete mat[x][y]; mat[x][y] = nullptr;
+		return;
 	}
 
 	

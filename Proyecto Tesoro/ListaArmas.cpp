@@ -150,11 +150,11 @@ NodoA* ListaArmas::getNodo(string tipo) {
 }
 
 
-int ListaArmas::cantidadBallestas() {
-	int can = 0;
+int ListaArmas::cantidadBallestas() {//dejo de servir el dynamic casting en estos
+	int can = 0;					//probablemente por algun casting que hice en otro metodo
 	NodoA* pex = head;
 	while (pex != nullptr) {
-		if (dynamic_cast<Ballesta*>(pex->getArma())) {
+		if (pex->getArma()->getTipo()=="ballesta") {
 			can++;
 		}
 		pex = pex->getNext();
@@ -165,18 +165,18 @@ int ListaArmas::cantidadEspadas() {
 	int can = 0;
 	NodoA* pex = head;
 	while (pex != nullptr) {
-		if (dynamic_cast<Espada*>(pex->getArma())) {
+		if (pex->getArma()->getTipo() == "espada") {
 			can++;
 		}
 		pex = pex->getNext();
 	}
 	return can;
 }
-int ListaArmas::cantidadYescas() {
+int ListaArmas::cantidadYescas() { 
 	int can = 0;
 	NodoA* pex = head;
 	while (pex != nullptr) {
-		if (dynamic_cast<Yesca*>(pex->getArma())) {
+		if (pex->getArma()->getTipo() == "yesca") {
 			can++;
 		}
 		pex = pex->getNext();
@@ -188,7 +188,7 @@ int ListaArmas::cantidadDagas() {
 	int can = 0;
 	NodoA* pex = head;
 	while (pex != nullptr) {
-		if (dynamic_cast<Daga*>(pex->getArma())) {
+		if (pex->getArma()->getTipo() == "daga") {
 			can++;
 		}
 		pex = pex->getNext();
