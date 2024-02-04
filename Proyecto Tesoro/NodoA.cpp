@@ -3,10 +3,28 @@ NodoA::NodoA() {
 	arma = nullptr;
 	next = nullptr;
 }
+
 NodoA::NodoA(Arma* arma, NodoA* next) {
-	this->arma = new Arma(arma);
+	
+	if (arma->getTipo() == Ballesta().getTipo()) {
+		this->arma = new Ballesta();
+	}
+
+	else if (arma->getTipo() == Daga().getTipo()) {
+		this->arma = new Daga();
+	}
+	
+	else if (arma->getTipo() == Espada().getTipo()) {
+		this->arma = new Espada();
+	}
+	
+	else if (arma->getTipo() == Yesca().getTipo()) {
+		this->arma = new Yesca();
+	}
+	
 	this->next = next;
 }
+
 NodoA::~NodoA() {
 	delete arma;
 }

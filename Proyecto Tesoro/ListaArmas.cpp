@@ -2,10 +2,12 @@
 
 ListaArmas::ListaArmas() { head = nullptr; }
 ListaArmas::~ListaArmas() {
-	NodoA* pex = head;
-	delete pex;
-	head = head->getNext();
-	pex = head;
+	NodoA* exo = head;
+	while(head != nullptr) {
+		head = head->getNext();
+		delete exo;
+		exo = head;
+	}
 }
 
 bool ListaArmas::existe(Arma* arma) {
