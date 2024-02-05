@@ -4,6 +4,20 @@ class ListaArmas {
 private:
 	NodoA* head;
 public:
+
+	void guardarListaArmas() { 
+		string rutaArchivo = "..//ListaArmas.txt";
+		NodoA* exo = head;
+		ofstream salida;
+		salida.open(rutaArchivo.c_str());
+		while (exo != nullptr) {
+			exo->getArma()->guardar(salida);
+			exo = exo->getNext();
+		}
+		salida.close();
+	}
+
+
 	ListaArmas();
 	ListaArmas(ListaArmas* list) {
 		NodoA* pex = list->getHead();

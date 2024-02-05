@@ -3,6 +3,7 @@
 Hierba::Hierba() { 
 	activo = true;
 	vida_restaurada = 15;
+	elemento = "curativo";
 }
 Hierba::~Hierba() { }
 
@@ -16,7 +17,7 @@ void Hierba::curar(Cosa* caballero) {
 string Hierba::toString(){
 	stringstream s;
 	s << "==== HIERBA MEDICINAL ====" << endl;
-	s << "Efecto: +" << vida_restaurada <<" HP" << endl;
+	s << "Efecto "<< elemento << ": +" << vida_restaurada <<" HP" << endl;
 	s << "==========================" << endl;
 	return s.str();
 }

@@ -2,7 +2,7 @@
 Yesca::Yesca() : Arma(true, "yesca", "agua", "x") {}
 
 Yesca::~Yesca() {}
-string Yesca::getElemento() const { return elemento; }
+string Yesca::getElemento() { return elemento; }
 void Yesca::setElemento(string elemento) { this->elemento = elemento; }
 
 string Yesca::toString() {

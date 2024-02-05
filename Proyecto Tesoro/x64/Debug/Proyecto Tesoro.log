@@ -1,2 +1,19 @@
-﻿  Enemigo.cpp
-  Proyecto Tesoro.vcxproj -> C:\Users\admin\Desktop\Info-U\verano\ProyectoTesoro00\x64\Debug\Proyecto Tesoro.exe
+﻿  Caballero.cpp
+  Hierba.cpp
+C:\Users\user\Desktop\Laboratorio\Proyecto Tesoro\Hierba.cpp(11,32): warning C4552: "+": el resultado de la expresión no se usa
+  Juego.cpp
+  Matriz.cpp
+C:\Users\user\Desktop\Laboratorio\Proyecto Tesoro\Matriz.cpp(72,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\user\Desktop\Laboratorio\Proyecto Tesoro\Matriz.cpp(93,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\user\Desktop\Laboratorio\Proyecto Tesoro\Matriz.cpp(110,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\user\Desktop\Laboratorio\Proyecto Tesoro\Matriz.cpp(127,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\user\Desktop\Laboratorio\Proyecto Tesoro\Matriz.cpp(144,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\user\Desktop\Laboratorio\Proyecto Tesoro\Matriz.cpp(161,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\user\Desktop\Laboratorio\Proyecto Tesoro\Matriz.cpp(178,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\user\Desktop\Laboratorio\Proyecto Tesoro\Matriz.cpp(195,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\user\Desktop\Laboratorio\Proyecto Tesoro\Matriz.cpp(212,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  main.cpp
+  Generando código...
+C:\Users\user\Desktop\Laboratorio\Proyecto Tesoro\Matriz.cpp(471): warning C4715: 'Matriz::esValida': no todas las rutas de acceso de control devuelven un valor
+  LINK : no se encontró C:\Users\user\Desktop\Laboratorio\x64\Debug\Proyecto Tesoro.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+  Proyecto Tesoro.vcxproj -> C:\Users\user\Desktop\Laboratorio\x64\Debug\Proyecto Tesoro.exe

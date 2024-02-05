@@ -40,10 +40,11 @@ Matriz::Matriz(int x, int y)
 		}
 	}
 
-	mat[0][0] = new Espada();
-	mat[0][1] = new Ogro();
-	mat[1][0] = new Gargola();
-	mat[1][1] = new Ballesta();
+	// TEST
+	//mat[0][0] = new Espada();
+	//mat[0][1] = new Ogro();
+	//mat[1][0] = new Gargola();
+	//mat[1][1] = new Ballesta();
 
 
 }

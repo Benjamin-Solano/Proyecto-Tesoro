@@ -14,11 +14,9 @@ public:
 	virtual void setDanio(int nuevoDanio);
 
 
-	virtual string getElemento() ;
+	virtual string getElemento();
 	virtual int getDanio();
 	virtual void atacar(Cosa* caballero);
-
-
 
 	virtual string toString() = 0;
 };

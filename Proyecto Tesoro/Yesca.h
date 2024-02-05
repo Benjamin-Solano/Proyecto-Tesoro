@@ -7,7 +7,7 @@ public:
     Yesca();
  
     ~Yesca();
-    string getElemento() const;
+    string getElemento();
     void setElemento(string elemento);
     virtual string toString();
 };

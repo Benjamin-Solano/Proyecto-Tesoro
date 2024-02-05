@@ -12,6 +12,9 @@
 #include "Enemigo.h"
 #include "Cosa.h"
 #include "Cofre.h"
+#include "fstream"
+
+
 
 class Matriz
 {
@@ -22,6 +25,21 @@ private:
 	int f = 0; int c = 0; //lugar actual del caballero
 
 public:
+
+	virtual void guardarMatriz() {
+		ofstream salida;
+		string rutaArchivo = "..//Matriz.txt"; 
+		salida.open(rutaArchivo.c_str());
+		for (int i = 0; i < fil; i++) {
+			for (int j = 0; j < col; j++) {
+				if (mat[i][j] != nullptr) {
+					mat[i][j]->guardarCosa(salida);
+				}
+			}
+		}
+		salida.close();
+	}
+
 	Matriz();
 	Matriz(int x, int y);
 	~Matriz();
