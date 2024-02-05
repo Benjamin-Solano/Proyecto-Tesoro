@@ -1,5 +1,5 @@
 #include "Daga.h"
-Daga::Daga() : Arma(true,"daga", "tierra", "x") {}
+Daga::Daga() : Arma("24", "daga", "tierra", "x", true) {}
 
 
 Daga::~Daga() {}

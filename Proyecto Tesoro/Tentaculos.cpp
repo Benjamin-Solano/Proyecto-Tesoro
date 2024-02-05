@@ -2,6 +2,7 @@
 
 
 Tentaculos::Tentaculos() {
+	setID("13");
 	setElemento("Agua");
 	setDanio(20);
 	setActivo(true);

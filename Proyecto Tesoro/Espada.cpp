@@ -1,5 +1,5 @@
 #include "Espada.h"
-Espada::Espada() : Arma(true,"espada", "tierra", "agua") {}
+Espada::Espada() : Arma("22", "espada", "tierra", "agua", true) {}
 
 
 Espada::~Espada() {}

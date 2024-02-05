@@ -1,6 +1,6 @@
 #include "Ballesta.h"
 
-Ballesta::Ballesta() : Arma(true, "ballesta", "aire", "x") {}
+Ballesta::Ballesta() : Arma("21", "ballesta", "aire", "x", true) {}
 
 
 Ballesta::~Ballesta() {}

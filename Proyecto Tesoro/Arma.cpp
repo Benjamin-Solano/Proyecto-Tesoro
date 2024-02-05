@@ -1,10 +1,11 @@
 #include "Arma.h"
 
 
-Arma::Arma() { activo = true; tipo = "x"; elemento = "x"; elemento2 = "x"; }
+Arma::Arma() { id = "2"; activo = true; tipo = "x"; elemento = "x"; elemento2 = "x"; }
 
-Arma::Arma(bool activo, string tipo, string elemento, string elemento2)
+Arma::Arma(string id, string tipo, string elemento, string elemento2, bool activo)
 {
+    this->id = id;
     this->activo = activo;
     this->tipo = tipo;
     this->elemento = elemento;

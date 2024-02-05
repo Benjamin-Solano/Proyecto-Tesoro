@@ -1,9 +1,12 @@
 #include "Cosa.h"
-Cosa::Cosa() { activo = true; }
-Cosa::Cosa(bool activo) : activo(activo) {}
+Cosa::Cosa() {id="0", activo = true; }
+Cosa::Cosa(string id, bool activo) : id(id), activo(activo) {}
 Cosa:: ~Cosa() {}
 bool Cosa::getActivo() const { return activo; }
+string Cosa::getID() const { return id; }
 void Cosa::setActivo(bool activo) { this->activo = activo; }
+
+void Cosa::setID(string id) { this->id = id; }
 
 
 void Cosa::setHp(int hp) { }

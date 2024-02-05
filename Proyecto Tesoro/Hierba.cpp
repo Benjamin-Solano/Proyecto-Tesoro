@@ -1,6 +1,7 @@
 #include "hierba.h"
 
-Hierba::Hierba() { 
+Hierba::Hierba() {
+	id = "03";
 	activo = true;
 	vida_restaurada = 15;
 	elemento = "curativo";

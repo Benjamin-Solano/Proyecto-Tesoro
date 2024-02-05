@@ -7,7 +7,7 @@ private:
 	int danio;
 public:
 	Enemigo();
-	Enemigo(bool,string, int);
+	Enemigo(string id, bool act, string ele, int atk);
 	~Enemigo();
 
 	virtual void setElemento(string nuevoElemento);
@@ -17,6 +17,16 @@ public:
 	virtual string getElemento();
 	virtual int getDanio();
 	virtual void atacar(Cosa* caballero);
+
+	virtual void guardar(fstream& strm) {
+		strm << id << DELIMITA_CAMPO;
+		strm << elemento << DELIMITA_CAMPO;
+		strm << danio << DELIMITA_CAMPO;
+		strm << activo << DELIMITA_REGISTRO;
+	}
+
+	
+
 
 	virtual string toString() = 0;
 };

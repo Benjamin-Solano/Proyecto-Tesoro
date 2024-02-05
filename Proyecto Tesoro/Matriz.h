@@ -27,20 +27,150 @@ private:
 public:
 
 	virtual void guardarMatriz() {
-		ofstream salida;
-		string rutaArchivo = "..//Matriz.txt"; 
-		salida.open(rutaArchivo.c_str());
+		fstream strm("..//Matriz.txt", ios::app);
+		
+		if (strm.is_open()) {
+			for (int i = 0; i < fil; i++) {
+				for (int j = 0; j < col; j++) {
+					if (mat[i][j] != nullptr) {
+						mat[i][j]->guardar(strm);
+					}
+				}
+			}
+			strm.close();
+		}
+		
+
+	}
+
+	static Matriz* recuperarMatriz() {
+		int x = true;
+		fstream strm("..//Matriz.txt", ios::in);
+		if (strm.is_open()) {
+
+			Matriz* list = new Matriz();
+
+			do {
+				string idStr = "";
+				getline(strm, idStr, DELIMITA_CAMPO);
+				if (idStr == "01") {
+					if (Cosa* cosa = Caballero::recuperar(strm, idStr)) {
+						if (cosa == nullptr) {
+							x = false; break;
+						}
+						list->ingresar(cosa);
+					}
+				}
+				if (idStr == "02") {
+					if (Cosa* cosa = Cofre::recuperar(strm, idStr)) {
+						if (cosa == nullptr) {
+							x = false; break;
+						}
+						list->ingresar(cosa);
+					}
+				}
+				if (idStr == "03") {
+					if (Cosa* cosa = Hierba::recuperar(strm, idStr)) {
+						if (cosa == nullptr) {
+							x = false; break;
+						}
+						list->ingresar(cosa);
+					}
+				}
+				if (idStr == "11") {
+					if (Cosa* cosa = Gargola::recuperar(strm, idStr)) {
+						if (cosa == nullptr) {
+							x = false; break;
+						}
+						list->ingresar(cosa);
+					}
+				}
+				if (idStr == "12") {
+					if (Cosa* cosa = Ogro::recuperar(strm, idStr)) {
+						if (cosa == nullptr) {
+							x = false; break;
+						}
+						list->ingresar(cosa);
+					}
+				}
+				if (idStr == "12") {
+					if (Cosa* cosa = Tentaculos::recuperar(strm, idStr)) {
+						if (cosa == nullptr) {
+							x = false; break;
+						}
+						list->ingresar(cosa);
+					}
+				}
+				if (idStr == "21") {
+					if (Cosa* arma = Ballesta::recuperarlo(strm, idStr)) {
+						if (arma == nullptr) {
+							x = false; break;
+						}
+						list->ingresar(arma);
+					}
+				}
+				if (idStr == "22") {
+					if (Cosa* arma = Espada::recuperarlo(strm, idStr)) {
+						if (arma == nullptr) {
+							x = false; break;
+						}
+						list->ingresar(arma);
+					}
+				}
+				if (idStr == "23") {
+					if (Cosa* arma = Yesca::recuperarlo(strm, idStr)) {
+						if (arma == nullptr) {
+							x = false; break;
+						}
+						list->ingresar(arma);
+					}
+				}
+				if (idStr == "24") {
+					if (Cosa* arma = Daga::recuperarlo(strm, idStr)) {
+						if (arma == nullptr) {
+							x = false; break;
+						}
+						list->ingresar(arma);
+					}
+				}
+				if (idStr == "")
+					x = false;
+
+			} while (x == true);
+
+			list->getMat()[0][0] = nullptr;
+			return list;
+			strm.close();
+		}
+
+
+	}
+
+	void ingresar(Cosa* c) {	
 		for (int i = 0; i < fil; i++) {
 			for (int j = 0; j < col; j++) {
 				if (mat[i][j] != nullptr) {
-					mat[i][j]->guardarCosa(salida);
-				}
+					//delete mat[i][j];
+					mat[i][j] == nullptr;
+				}		
+				mat[i][j] = c; return;
 			}
 		}
-		salida.close();
 	}
 
 	Matriz();
+	Matriz(Matriz* matr) {
+		for (int i = 0; i < matr->getFil(); i++) {
+			for (int j = 0; j < matr->getCol(); j++) {
+				//if (mat[i][j] != nullptr || matr->getMat()[i][j] != nullptr) {
+					mat[i][j] = matr->getMat()[i][j];
+				//}
+				
+			}
+		}
+	}
+
+
 	Matriz(int x, int y);
 	~Matriz();
 	Cosa*** getMat() { return mat; }

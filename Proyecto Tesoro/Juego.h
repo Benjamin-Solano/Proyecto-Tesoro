@@ -11,11 +11,12 @@ public:
 	Juego();
 
 	void guardarCaballero() {
-		ofstream salida;
-		string rutaArchivo = "..//Caballero.txt";
-		salida.open(rutaArchivo.c_str());
-		caballero->guardarC(salida);
-		salida.close();
+		fstream strm("..//Caballero.txt", ios::app);
+		if (strm.is_open()) {
+			caballero->guardar(strm);
+			strm.close();
+		}	
+		strm.close();
 	}
 
 	string menu();

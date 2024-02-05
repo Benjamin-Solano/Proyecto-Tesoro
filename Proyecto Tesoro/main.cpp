@@ -81,18 +81,24 @@ int main() {
 	cout << mat->toString() << endl;*/
 
 	//verificar
-	
+	Matriz* mat = new Matriz();
+	cout << mat->toString() << endl;
+	Caballero* cab = new Caballero();
 	//mat->verificar(0, 0, cab);//espada
 	//mat->verificar(0, 1, cab);//ogro
 	//mat->verificar(1, 1, cab);//ballesta
 	//mat->verificar(1, 0, cab);//gargola
 	
+	mat->guardarMatriz();
+	//Matriz* mat2 = new Matriz();
+	cout << Matriz::recuperarMatriz()->toString() << endl;
+
 	//ts
 	// 
 	//cout << mat->toString() << endl;
 	// << cab->getListaArmas()->toString() << endl;
 
-	Juego j;
+	//Juego j;
 
 
 

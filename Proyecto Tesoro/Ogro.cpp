@@ -1,6 +1,7 @@
 #include "Ogro.h"
 
 Ogro::Ogro() {
+	setID("12");
 	setElemento("Tierra");
 	setDanio(35);
 	setActivo(true);

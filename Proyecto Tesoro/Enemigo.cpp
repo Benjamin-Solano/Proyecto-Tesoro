@@ -1,10 +1,10 @@
 #include "Enemigo.h"
 
-Enemigo::Enemigo() : Cosa(false) {
+Enemigo::Enemigo() : Cosa("1", false) {
 	elemento = "x";
 	danio = 0;
 }
-Enemigo::Enemigo(bool act, string ele, int atk) : Cosa(act), elemento(ele), danio(atk){ }
+Enemigo::Enemigo(string id, bool act, string ele, int atk) : Cosa("1", act), elemento(ele), danio(atk) { }
 
 void Enemigo::setElemento(string nuevoElemento) { elemento = nuevoElemento; }
 void Enemigo::setDanio(int nuevoDanio) { danio = nuevoDanio; }

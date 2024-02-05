@@ -41,10 +41,10 @@ Matriz::Matriz(int x, int y)
 	}
 
 	// TEST
-	//mat[0][0] = new Espada();
-	//mat[0][1] = new Ogro();
-	//mat[1][0] = new Gargola();
-	//mat[1][1] = new Ballesta();
+	mat[0][0] = new Espada();
+	mat[0][1] = new Ogro();
+	mat[1][0] = new Gargola();
+	mat[1][1] = new Ballesta();
 
 
 }
@@ -464,10 +464,9 @@ Cosa* Matriz::getCosa(int x, int y)
 bool Matriz::esValida(int x, int y)
 {
 	if (x < 0 || x>8 || y < 0 || y>8)
-		return false;
+		return false;	
 
-	
-
+	return true;
 }
 
 bool Matriz::hayCofre(int x, int y)

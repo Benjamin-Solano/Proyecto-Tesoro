@@ -2,6 +2,7 @@
 
 
 Gargola::Gargola() {
+	setID("11");
 	setElemento("Aire");
 	setDanio(40);
 	setActivo(true);

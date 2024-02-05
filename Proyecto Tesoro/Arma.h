@@ -11,14 +11,37 @@ protected:
     string elemento2;
 public:
 
-    virtual void guardar(ostream& salida) {
-        salida << tipo << DELIMITADOR_CAMPO;
-        salida << elemento << DELIMITADOR_CAMPO;
-        salida << elemento2 << DELIMITADOR_REGISTRO;
+    virtual void guardar(fstream& strm) {
+        strm << id << DELIMITADOR_CAMPO;
+        strm << tipo << DELIMITADOR_CAMPO;
+        strm << elemento << DELIMITADOR_CAMPO;
+        strm << elemento2 << DELIMITADOR_CAMPO;
+        strm << activo << DELIMITADOR_REGISTRO;
     }
 
+    static Cosa* recuperar(fstream& strm, string str) {
+        string idStr, tipoStr, elemStr, elem2Str, actStr = "";
+        bool activo = false;
+       // getline(strm, idStr, DELIMITADOR_CAMPO);
+        getline(strm, tipoStr, DELIMITADOR_CAMPO);
+        getline(strm, elemStr, DELIMITADOR_CAMPO);
+        getline(strm, elem2Str, DELIMITADOR_CAMPO);
+        getline(strm, actStr, DELIMITADOR_REGISTRO);
+       
+        if (actStr == "1")
+            activo = true;
+
+        return new Arma(str, tipoStr, elemStr, elem2Str, activo);
+
+    }
+
+
     Arma();
-    Arma(bool activo, string tipo, string elemento, string elemento2);
+    Arma(string id, string tipo, string elemento, string elemento2, bool activo);
+
+  /*  Arma(string id, bool activo, string tipo, string elemento, string elemento2)
+        :Cosa(id, activo), tipo(tipo), elemento(elemento), elemento2(elemento2){}*/
+
     Arma(Arma* arma) {
         tipo = arma->getTipo();
         elemento = arma->getElemento();

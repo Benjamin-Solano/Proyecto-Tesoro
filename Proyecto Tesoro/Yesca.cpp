@@ -1,5 +1,5 @@
 #include "Yesca.h"
-Yesca::Yesca() : Arma(true, "yesca", "agua", "x") {}
+Yesca::Yesca() : Arma("23", "yesca", "agua", "x", true) {}
 
 Yesca::~Yesca() {}
 string Yesca::getElemento() { return elemento; }

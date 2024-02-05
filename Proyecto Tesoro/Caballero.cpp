@@ -6,7 +6,7 @@ Caballero::Caballero() {
 }
 
 Caballero::Caballero(ListaArmas* lista, bool activo)
-	: Cosa(activo), hp(100), lista(lista) {
+	: Cosa("01",activo), hp(100), lista(lista) {
 }
 Caballero::~Caballero() { delete lista; }
 void Caballero::setHp(int hp) { this->hp = hp; }
